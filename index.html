@@ -897,6 +897,150 @@
             line-height: 1.6;
         }
 
+        .live-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--accent-color);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            z-index: 5;
+            box-shadow: 0 5px 15px rgba(255, 101, 132, 0.4);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(255, 101, 132, 0.7);
+            }
+            70% {
+                transform: scale(1.05);
+                box-shadow: 0 0 0 10px rgba(255, 101, 132, 0);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(255, 101, 132, 0);
+            }
+        }
+
+        .portfolio-btns {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .portfolio-btns .btn {
+            padding: 10px 20px;
+            font-size: 0.9rem;
+            min-width: 130px;
+        }
+
+        /* Featured Live Section */
+        .featured-live {
+            background: rgba(108, 99, 255, 0.05);
+            margin: 0 20px;
+            border-radius: 20px;
+            border: 1px solid rgba(108, 99, 255, 0.1);
+            padding: 100px 0;
+        }
+
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .featured-card {
+            background: rgba(20, 20, 35, 0.8);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+            position: relative;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        .featured-card:hover {
+            transform: translateY(-15px) scale(1.02) !important;
+            border-color: var(--primary-color);
+            box-shadow: 0 30px 60px rgba(108, 99, 255, 0.2);
+        }
+
+        .featured-img-wrapper {
+            position: relative;
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .featured-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.8s ease;
+        }
+
+        .featured-card:hover .featured-img {
+            transform: scale(1.1);
+        }
+
+        .featured-content {
+            padding: 30px;
+        }
+
+        .featured-tag {
+            background: var(--primary-color);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .featured-title {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: white;
+        }
+
+        .featured-desc {
+            color: var(--gray-color);
+            margin-bottom: 25px;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .featured-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            text-decoration: none;
+            color: white !important;
+            font-weight: 600;
+            padding: 12px 25px;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            border-radius: 50px;
+            transition: var(--transition);
+            box-shadow: 0 10px 20px rgba(108, 99, 255, 0.2);
+            font-size: 0.9rem;
+            min-width: 160px;
+        }
+
+        .featured-link:hover {
+            background: linear-gradient(45deg, var(--accent-color), var(--primary-color));
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px rgba(255, 101, 132, 0.3);
+        }
+
         /* Certifications Section */
         .certifications {
             position: relative;
@@ -1507,6 +1651,7 @@
                     <li><a href="#about">About</a></li>
                     <li><a href="#experience">Experience</a></li>
                     <li><a href="#services">Services</a></li>
+                    <li><a href="#live-apps">Live Sites</a></li>
                     <li><a href="#portfolio">Portfolio</a></li>
                     <li><a href="#certifications">Certifications</a></li>
                     <li><a href="#contact">Contact</a></li>
@@ -1652,6 +1797,80 @@
         </div>
     </section>
 
+    <!-- Featured Live Showcase -->
+    <section class="featured-live" id="live-apps">
+        <div class="container">
+            <div class="section-title">
+                <h2>My  Live Sites</h2>
+                <p>Explore my fully functional, live-deployed applications that solve real-world problems.</p>
+            </div>
+            <div class="featured-grid">
+                <!-- MEC Attendance System -->
+                <div class="featured-card">
+                    <div class="featured-img-wrapper">
+                        <img src="assets/mec-attendance.png" alt="MEC Attendance System" class="featured-img">
+                        <div class="live-badge">ACTIVE LIVE</div>
+                    </div>
+                    <div class="featured-content">
+                        <span class="featured-tag">Full Stack • MERN</span>
+                        <h3 class="featured-title">🎓 MEC Attendance System</h3>
+                        <p class="featured-desc">A comprehensive academic management system featuring real-time attendance tracking, CIA marks entry, and graphical performance analytics for students and faculty.</p>
+                        <div class="portfolio-btns">
+                            <a href="https://mec-att-sys-1.onrender.com" target="_blank" class="featured-link">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                            <a href="https://github.com/msdhatchanamoorthy/EduResult-Analytics" target="_blank" class="btn btn-outline" style="min-width: 130px; padding: 10px 20px;">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- India Explorer -->
+                <div class="featured-card">
+                    <div class="featured-img-wrapper">
+                        <img src="assets/india-explorer.png" alt="India Explorer" class="featured-img">
+                        <div class="live-badge">ACTIVE LIVE</div>
+                    </div>
+                    <div class="featured-content">
+                        <span class="featured-tag">MERN Stack • Travel</span>
+                        <h3 class="featured-title">🇮🇳 India Explorer</h3>
+                        <p class="featured-desc">An immersive travel planning platform that connects explorers with curated hotel packages and experiences across the diverse landscapes of India.</p>
+                        <div class="portfolio-btns">
+                            <a href="https://indiaexplorer-1.onrender.com" target="_blank" class="featured-link">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                            <a href="https://github.com/msdhatchanamoorthy/IndiaExplorer" target="_blank" class="btn btn-outline" style="min-width: 130px; padding: 10px 20px;">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ecommerce Platform -->
+                <div class="featured-card">
+                    <div class="featured-img-wrapper">
+                        <img src="assets/ecommerce.png" alt="Ecommerce Platform" class="featured-img">
+                        <div class="live-badge">ACTIVE LIVE</div>
+                    </div>
+                    <div class="featured-content">
+                        <span class="featured-tag">E-Commerce • MERN</span>
+                        <h3 class="featured-title">🛒 Ecommerce Platform</h3>
+                        <p class="featured-desc">A feature-rich shopping experience with secure JWT authentication, dynamic product filtering, real-time cart updates, and an intuitive admin dashboard.</p>
+                        <div class="portfolio-btns">
+                            <a href="https://ecommerce-3-ljes.onrender.com/products" target="_blank" class="featured-link">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                            <a href="https://github.com/msdhatchanamoorthy/Ecommerce" target="_blank" class="btn btn-outline" style="min-width: 130px; padding: 10px 20px;">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Portfolio Section -->
     <section class="portfolio" id="portfolio">
         <div class="container">
@@ -1666,39 +1885,6 @@
                 <button class="filter-btn" data-filter="nextjs">Next.js</button>
             </div>
             <div class="portfolio-grid">
-                <div class="portfolio-item" data-category="mern">
-                    <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
-                        alt="India Explorer" class="portfolio-img">
-                    <div class="portfolio-overlay">
-                        <h3>🇮🇳 India Explorer</h3>
-                        <p>A travel platform built with MERN Stack to make travel planning seamless — connecting users
-                            with the best travel packages, hotels, and experiences across India.</p>
-                        <a href="https://github.com/msdhatchanamoorthy/IndiaExplorer" target="_blank"
-                            class="btn btn-outline">View on GitHub</a>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-category="fullstack">
-                    <img src="https://images.unsplash.com/photo-1581276879432-15e50529f34b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
-                        alt="EduResult Analytics" class="portfolio-img">
-                    <div class="portfolio-overlay">
-                        <h3>🎓 EduResult Analytics</h3>
-                        <p>Smart academic management system for engineering colleges — track attendance, upload CIA
-                            marks, generate graphical analytics, and send parent notifications.</p>
-                        <a href="https://github.com/msdhatchanamoorthy/EduResult-Analytics" target="_blank"
-                            class="btn btn-outline">View on GitHub</a>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-category="mern">
-                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
-                        alt="Ecommerce" class="portfolio-img">
-                    <div class="portfolio-overlay">
-                        <h3>🛒 Ecommerce Platform</h3>
-                        <p>Full-stack MERN e-commerce app with JWT auth, product search & filters, cart management,
-                            order tracking, and a powerful admin dashboard.</p>
-                        <a href="https://github.com/msdhatchanamoorthy/Ecommerce" target="_blank"
-                            class="btn btn-outline">View on GitHub</a>
-                    </div>
-                </div>
                 <div class="portfolio-item" data-category="fullstack">
                     <img src="https://images.unsplash.com/photo-1567521464027-f127ff144326?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
                         alt="Smart Canteen" class="portfolio-img">
@@ -1899,6 +2085,7 @@
                         <li><a href="#about">About</a></li>
                         <li><a href="#experience">Experience</a></li>
                         <li><a href="#services">Services</a></li>
+                        <li><a href="#live-apps">Live Sites</a></li>
                         <li><a href="#portfolio">Portfolio</a></li>
                         <li><a href="#certifications">Certifications</a></li>
                         <li><a href="#contact">Contact</a></li>
@@ -2291,6 +2478,22 @@
 
         // Service cards animations
         gsap.utils.toArray('.service-card').forEach((card, i) => {
+            gsap.to(card, {
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                delay: i * 0.2,
+                scrollTrigger: {
+                    trigger: card,
+                    start: "top 85%",
+                    end: "bottom 15%",
+                    toggleActions: "play none none reverse"
+                }
+            });
+        });
+
+        // Featured cards animations
+        gsap.utils.toArray('.featured-card').forEach((card, i) => {
             gsap.to(card, {
                 opacity: 1,
                 y: 0,
